@@ -1,0 +1,10 @@
+{
+    "arial": {
+        "normal": "arial_normal_daff7119541195d1b7ac09ba01cbbb42"
+    },
+    "arial-unicode-ms": {
+        "normal": "arial_unicode_ms_normal_bde3b6461929727e44c4eccb87b5a1df",
+        "bold": "arial_unicode_ms_bold_19b99058f54b1069a017e0fff3e5d135",
+        "italic": "arial_unicode_ms_italic_c29cd25b5a41a214c1abcbfbd485c395"
+    }
+}

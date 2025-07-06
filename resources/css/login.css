@@ -1,0 +1,295 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@font-face {
+    font-family: "Outfit";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/Outfit-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outfit";
+    font-weight: 500;
+    font-style: normal;
+    src: url("../fonts/Outfit-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outfit";
+    font-weight: 600;
+    font-style: normal;
+    src: url("../fonts/Outfit-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outfit";
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/Outfit-Bold.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.fi-simple-main-ctn {
+    /* background-color: #f2eaf9 !important; */
+    /* width: 100%;
+    height: 100vh; */
+}
+
+.fi-simple-main {
+    padding: 18px 25px 5px !important;
+}
+
+main {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    /* background-color: #f2eaf9 !important; */
+    color: #747474;
+    max-width: 34rem !important;
+    /* max-width: 100% !important;
+    height: 100vh;
+    border-radius: 0 !important; */
+}
+
+.login-container {
+    color: #747474;
+}
+
+.login-container .logo-image img {
+    max-height: 100px;
+    margin: 0 auto 20px auto;
+}
+
+.login-container .side-image {
+    border-radius: 20px 20px 100px 20px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.form-container .fi-form {
+    row-gap: 15px;
+}
+
+.login-container .form-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 22px 0px rgb(0 0 0 / 5%);
+}
+
+.form-container .form-heading {
+    margin-bottom: 25px;
+}
+
+.form-container .form-heading h1 {
+    margin-block-end: -10px !important;
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.form-container .form-heading h1.reset-title {
+    font-size: 50px;
+}
+
+.form-container .form-heading p {
+    font-size: 20px;
+}
+
+@media (max-width:1250px) {
+    .form-container .form-heading h1 {
+        font-size: 50px;
+    }
+
+    .form-container .form-heading h1.reset-title {
+        font-size: 40px;
+    }
+}
+
+@media (max-width:500px) {
+    .form-container .form-heading h1 {
+        font-size: 40px;
+    }
+
+    .form-container .form-heading h1.reset-title {
+        font-size: 34px;
+    }
+
+    .form-container .form-heading p {
+        font-size: 17px;
+    }
+}
+
+/* fi-fo-field-wrp-label */
+label span {
+    color: #000 !important;
+}
+
+input {
+    color: #747474 !important;
+    font-size: 14px !important;
+    padding: 8px 13px !important;
+    border-radius: 8px !important;
+    border: 1px solid #a7a7a7 !important;
+    border-color: #a7a7a7 !important;
+    background-color: transparent !important;
+}
+
+input:focus {
+    padding: 8px 14px !important;
+    outline: none;
+}
+
+input[type="checkbox"] {
+    padding: 10px !important;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #6219a6 !important;
+}
+
+/* Change the color of selected text */
+::selection {
+    background: #6219a6cf;
+    color: #ffffff;
+}
+
+/* For compatibility with Firefox */
+::-moz-selection {
+    background: #6219a6cf;
+    color: #ffffff;
+}
+
+.form-submit {
+    font-size: 19px;
+    padding: 12px !important;
+    background-color: #6219a6 !important;
+}
+
+.form-container a {
+    color: #6219a6;
+}
+
+.form-container .or-continue {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 0 15px 0;
+}
+
+.form-container .or-continue .left-line {
+    top: 50%;
+    left: 60px;
+    width: 30%;
+    height: 2px;
+    background-image: linear-gradient(270deg, #a7a7a7, transparent);
+}
+
+.form-container .or-continue .right-line {
+    top: 50%;
+    right: 60px;
+    width: 30%;
+    height: 2px;
+    background-image: linear-gradient(90deg, #a7a7a7, transparent);
+}
+
+.google-button {
+    margin: 15px auto 0 auto;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    border: 1px solid #6219a6;
+    color: #6219a6;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.4s ease;
+}
+
+.google-button:hover {
+    background-color: #6219a6;
+    color: #fff;
+}
+
+.password-field div input {
+    border-right: none !important;
+    border-radius: 8px 0px 0px 8px !important;
+}
+
+.password-field div.border-s {
+    border: 1px solid #a7a7a7 !important;
+    border-left: none !important;
+    border-radius: 0px 8px 8px 0px !important;
+}
+
+.fi-fo-component-ctn {
+    gap: 14px !important;
+}
+
+.grid.gap-y-2 {
+    gap: 5px !important;
+}
+
+.register-form {
+    gap: 0px !important;
+}
+
+.fi-icon-btn-icon {
+    fill: #71717a;
+    transition: .3s all ease-in-out;
+}
+
+.fi-icon-btn-icon:hover {
+    fill: #a1a1aa;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+html[dir="rtl"] .password-field div input {
+    border-left: none !important;
+    border-radius: 0 8px 8px 0 !important;
+}
+
+html[dir="rtl"] .password-field div.border-s {
+    border: 1px solid #a7a7a7 !important;
+    border-right: none !important;
+    border-radius: 8px 0 0 8px !important;
+}
+
+
+@media (max-width: 500px) {
+    .login-container .form-container {
+        padding: 30px 10px;
+    }
+
+    .fi-simple-main {
+        padding: 18px 10px !important;
+    }
+
+    .form-container .or-continue {
+        gap: 5px;
+    }
+}

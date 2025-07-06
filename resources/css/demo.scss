@@ -1,0 +1,354 @@
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica.afm.json") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica-Bold.afm.json") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../fonts/Outfit-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+body.fi-body {
+    font-family: "Outfit", Helvetica, sans-serif;
+    background-color: #ffffff;
+
+
+    .fi-main-ctn {
+        background-color: #ffffff;
+    }
+
+    main.fi-main {
+        border-radius: 40px;
+        overflow: auto;
+        background-color: #f0f5f9;
+        min-height: 90vh;
+        max-height: 93vh;
+
+        &.max-w-7xl {
+            max-width: none;
+        }
+    }
+}
+
+.fi-topbar nav {
+    // margin: 20px 50px 0px 50px;
+    // border-radius: 16px;
+    padding: 20px 27px;
+    box-shadow: none;
+    // box-shadow: 0 0 22px 0px rgb(0 0 0 / 5%);
+}
+
+aside.fi-sidebar {
+    // margin: 20px 0px 20px 20px;
+    // border-radius: 16px;
+    overflow: hidden;
+    // box-shadow: 0 0 22px 0px rgb(0 0 0 / 5%);
+    // height: 95vh;
+
+    @media (max-width:1024px) {
+        margin: 20px 0px 20px 0px;
+    }
+}
+
+nav.fi-sidebar-nav {
+    background-color: #ffffff;
+    padding: 60px 0px 0px 9px;
+    overflow: unset;
+
+    .fi-sidebar-group-items {
+        row-gap: 10px;
+        position: relative;
+
+        .fi-sidebar-item {
+            padding: 0 0 0 25px;
+
+            .fi-sidebar-item-button {
+                border-radius: 20px 0 0 20px;
+                position: relative;
+                padding: 10px 15px 10px 20px;
+
+                // width: 4em;
+                // height: 4em;
+                background: #fff;
+                // inset: calc(50% - 2em) 0 0 calc(100% - 4em);
+                border-top-left-radius: 1.25em;
+                border-bottom-left-radius: 1.25em;
+
+                &::before {
+                    opacity: 0;
+                    position: absolute;
+                    content: "";
+                    width: 26px;
+                    height: 25px;
+                    background: transparent;
+                    inset: -59% 0 0 calc(95% - 1.25em);
+                    border-bottom-right-radius: 116px;
+                    box-shadow: 11px 10px 0 10px #f0f5f9;
+                    z-index: 111;
+                }
+
+                &::after {
+                    opacity: 0;
+                    position: absolute;
+                    content: "";
+                    width: 26px;
+                    height: 25px;
+                    background: transparent;
+                    inset: 102% 0 0 calc(95% - 1.25em);
+                    border-top-right-radius: 116px;
+                    box-shadow: 10px -10px 0 10px #f0f5f9;
+                    z-index: 111;
+                }
+
+                &:hover {
+                    // background-color: #f3e5ff;
+
+                    // &::before {
+                    //     opacity: 1;
+                    // }
+
+                    // &::after {
+                    //     opacity: 1;
+                    // }
+
+                    svg,
+                    span {
+                        color: #9333ea;
+                    }
+                }
+            }
+
+            &.fi-active {
+                .fi-sidebar-item-button {
+                    background-color: #f0f5f9;
+
+                    &::before {
+                        opacity: 1;
+                    }
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.fi-ta-ctn {
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+
+    .fi-ta-header-ctn {
+
+        .fi-ta-header-toolbar {
+            column-gap: 0;
+            padding: 5px 20px 25px 2px;
+            display: flex;
+            justify-content: unset;
+            width: 100%;
+
+            .fi-ta-search-field .fi-input-wrp input.fi-input {
+                min-width: 250px;
+                padding: 7px 8px;
+            }
+
+            .fi-ta-actions {
+                margin-right: 15px;
+            }
+
+            div.ms-auto {
+                width: 100%;
+                justify-content: space-between;
+
+                .fi-ta-filters-dropdown {
+                    margin-inline-start: auto;
+
+                    .fi-dropdown-trigger {
+                        .fi-icon-btn {
+                            background-color: #9333ea;
+
+                            .fi-icon-btn-icon {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .fi-ta-content {
+        box-shadow: 0 0 22px 0px rgb(0 0 0 / 5%);
+        border: none !important;
+        border-radius: 20px;
+
+        .fi-ta-table {
+            border: none;
+
+            thead {
+                tr {
+                    background-color: #f8f9fa;
+
+                    th:first-child {
+                        padding: 8px 8px 1px 11px;
+                    }
+
+                    th:last-child {
+                        padding: 8px 25px 1px 7px;
+                    }
+
+                    th {
+                        padding: 5px 7px 1px 7px;
+                    }
+                }
+            }
+
+            tbody {
+                border: none;
+
+                tr:nth-child(odd) {
+                    background-color: #ffffff;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #eff3f6;
+                }
+
+                .pointer-events-none.opacity-70 {
+                    opacity: 0.4;
+                }
+
+                tr.fi-ta-row {
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .fi-pagination {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        .fi-pagination-overview {
+            // grid-column-start: 1;
+            display: block;
+            order: 2;
+            white-space: nowrap;
+
+            @media (max-width:991px) {
+                display: none !important;
+            }
+
+        }
+
+        button.fi-btn {
+            display: none;
+            border: none;
+            box-shadow: none;
+            padding: 8px 15px;
+
+            @media (max-width:991px) {
+                display: inline-grid;
+            }
+        }
+
+
+        div.col-start-2.justify-self-center {
+            @media (max-width:991px) {
+                margin-inline: auto;
+            }
+        }
+
+        .fi-pagination-records-per-page-select {
+            .fi-input-wrp {
+                box-shadow: none;
+                background-color: transparent;
+                order: 1;
+
+                div.border-e {
+                    border: none;
+                }
+
+                select.fi-select-input {
+                    padding: 6px 35px 6px 12px;
+                    border-radius: 8px;
+                    background-color: #ffffff;
+                }
+            }
+        }
+
+        .fi-pagination-items {
+            background-color: transparent;
+            border: 0;
+            gap: 5px;
+            box-shadow: none;
+            border-radius: 0px;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            order: 3;
+            margin-left: auto;
+
+            @media (max-width:991px) {
+                display: none !important;
+            }
+
+            .fi-pagination-item {
+                border: none;
+
+                .fi-pagination-item-button {
+                    background-color: transparent;
+                    border-radius: 5px;
+                    box-shadow: none;
+
+                    span.fi-pagination-item-label {
+                        color: #000000;
+                    }
+
+                    &:hover {
+                        background-color: #f3e5ff;
+                    }
+                }
+
+                &.fi-active {
+                    .fi-pagination-item-button {
+                        background-color: #9333ea;
+
+                        span.fi-pagination-item-label {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+a.fi-btn {
+    padding: 8px 20px;
+}
