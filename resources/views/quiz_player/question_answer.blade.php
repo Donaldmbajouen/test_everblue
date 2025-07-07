@@ -112,7 +112,29 @@
                                     value="{{ $answer->id }}" />
                             @endif
                             <span class="text-start lg:text-xl text-lg text-gray-800 peer-checked:text-[#ca77ff]">
-                                {{ $answer->title }}
+                                @if($answer->type === 'text')
+                                    <span title="Réponse texte">📝 {{ $answer->title }}</span>
+                                @elseif($answer->type === 'audio' && $answer->content)
+                                    <span title="Réponse audio">🔊</span>
+                                    <audio controls style="max-width: 300px; vertical-align: middle;">
+                                        <source src="{{ Storage::url($answer->content) }}" type="audio/mpeg">
+                                        Votre navigateur ne supporte pas la lecture audio.
+                                    </audio>
+                                @elseif($answer->type === 'video' && $answer->content)
+                                    <span title="Réponse vidéo">🎬</span>
+                                    <video controls style="max-width: 320px; max-height: 180px; vertical-align: middle;">
+                                        <source src="{{ Storage::url($answer->content) }}" type="video/mp4">
+                                        Votre navigateur ne supporte pas la lecture vidéo.
+                                    </video>
+                                @elseif($answer->type === 'file' && $answer->content)
+                                    <span title="Fichier joint">📄</span>
+                                    <a href="{{ Storage::url($answer->content) }}" target="_blank" class="text-blue-600 underline flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        Ouvrir le fichier
+                                    </a>
+                                @endif
                             </span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden peer-checked:block"
                                 viewBox="0 0 512 512">

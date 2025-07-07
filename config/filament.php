@@ -86,4 +86,25 @@ return [
 
     'livewire_loading_delay' => 'default',
 
+    /*
+    |--------------------------------------------------------------------------
+    | File Upload Settings
+    |--------------------------------------------------------------------------
+    |
+    | Configuration for file uploads in Filament forms.
+    |
+    */
+
+    'file_upload' => [
+        'max_size' => 102400, // 100MB in KB
+        'timeout' => 300, // 5 minutes
+        'chunk_size' => 1024, // 1MB chunks
+        'retry_attempts' => 3,
+        'allowed_extensions' => [
+            'audio' => ['mp3', 'wav', 'ogg', 'aac', 'm4a'],
+            'video' => ['mp4', 'avi', 'mov', 'wmv', 'webm'],
+            'document' => ['txt', 'pdf', 'doc', 'docx'],
+        ],
+    ],
+
 ];
